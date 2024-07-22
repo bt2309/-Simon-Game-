@@ -24,12 +24,13 @@ Score and high score will be kept track at the side of the game to show how far 
 - AI Buttons pattern
 - Light pattern
 - Player Buttons record
--
 
 ## Pseudocode -> if you have complex interactions
 
 1. AI
+
 2. Audio
+
 3. Vibration
 
 ## Github :github: repo to track your code changes and update the Project Tracker
