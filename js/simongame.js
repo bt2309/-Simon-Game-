@@ -7,10 +7,13 @@ const BLUE = "B";
 
 /*---------------------------- Variables (state) ----------------------------*/
 
+const game = {
+    compChoice: "",
+    playerChoice: "",
+    score: 0,
+};
 
-// - AI Buttons pattern
 // - Light pattern
-// - Player Buttons record
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -18,13 +21,6 @@ const greenButton = document.getElementById("simon-btn-top-left");
 const redButton = document.getElementById("simon-btn-top-right");
 const yellowButton = document.getElementById("simon-btn-btm-left");
 const blueButton = document.getElementById("simon-btn-btm-right");
-
-// const buttons = {
-//     [GREEN]: greenButton,
-//     [RED]: redButton,
-//     [YELLOW]: yellowButton,
-//     [BLUE]: blueButton,
-// };
 
 const buttons = [greenButton, redButton, yellowButton, blueButton];
 
