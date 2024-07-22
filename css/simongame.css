@@ -18,25 +18,31 @@
     flex-wrap: wrap;
 }
 
-.simon-btn {
+#simon-btn-top-left {
     height: 100px;
     width: 100px;
     border: none;
-}
-
-.top-left {
     background-color: green;
 }
 
-.top-right {
+#simon-btn-top-right {
+    height: 100px;
+    width: 100px;
+    border: none;
     background-color: red;
 }
 
-.btm-left {
+#simon-btn-btm-left {
+    height: 100px;
+    width: 100px;
+    border: none;
     background-color: yellow;
 }
 
-.btm-right {
+#simon-btn-btm-right {
+    height: 100px;
+    width: 100px;
+    border: none;
     background-color: blue;
 }
 
