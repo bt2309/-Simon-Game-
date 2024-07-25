@@ -46,20 +46,6 @@ div {
     align-items: center;
 }
 
-#reset-button {
-    font-family: "Edu AU VIC WA NT Hand", cursive;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    border-color: lightcyan;
-    color: white;
-    background-color: royalblue;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .simon-board {
     width: 300px;
     margin: auto;
@@ -173,25 +159,4 @@ div {
     0 0 0 1px rgba(0, 0, 0, 0.4);
     background-color: #0077ff;
     transform: translateY(10px);
-}
-
-#message {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-}
-
-#score {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#high { 
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
