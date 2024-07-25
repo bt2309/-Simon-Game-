@@ -26,9 +26,9 @@ const simonBoard = document.querySelector(".simon-board");
 
 //* to commence the beginning of a round of Simon
 const startGame = () => {
-    startButton.classList.add("hidden");
-    info.classList.remove("hidden");
-    info.textContent = "Wait for the computer 😊";
+    startButton.classList.add("hidden"); // hide start button
+    info.classList.remove("hidden"); 
+    info.textContent = "Wait for the computer 😊"; // visually replace start button with text
     nextRound(); // start off the 1st round
 }
 
@@ -61,7 +61,7 @@ const nextStep = () => {
 //* and subsequently unselect the color after 300ms
 //* which also means there's 300ms between color activations
 const activateButton = (color) => {
-    const button = document.querySelector(`[id="${color}"]`);
+    const button = document.querySelector(`[data-color="${color}"]`);
     const sound = document.querySelector(`[data-sound="${color}"]`);
 
     button.classList.add("activated");
@@ -89,10 +89,29 @@ const playerTurn = () => {
     info.textContent = "Your Turn 👋";
 }
 
+//* create player's click
+const handleClick = (color) => {
+    const index = playerSequence.push(color) - 1; // pushes color value into playerSequence array
+    const sound = document.querySelector(`[data-sound="${color}"]`); // link sound to click
+    sound.play();
+
+    if (playerSequence.length === sequence.length) {
+        playerSequence = [];
+        info.textContent = "Success! Keep going! 💪"; // replace text to indicicate correct answer
+        setTimeout (() => {
+            nextRound();
+        }, 1000); // create delay before the start of next round
+        return;
+    }
+}
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 startButton.addEventListener("click", startGame);
-
+simonBoard.addEventListener("click", event => {
+    const {color} = event.target.dataset; // value of data-color on clicked element is accessed.
+    if (color) handleClick(color);
+});
 
 

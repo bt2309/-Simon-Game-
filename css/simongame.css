@@ -74,7 +74,7 @@ div {
     pointer-events: none;
 }
 
-#green {
+.color-green {
     height: 100px;
     width: 100px;
     border: none;
@@ -84,22 +84,22 @@ div {
     transition: 0.15s;
 }
 
-#green:hover,
-#green:focus {
+.color-green:hover,
+.color-green:focus {
     background-color: #18c22f;
     box-shadow: 0 0 0 1px #18c22f inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 10px 0 0 #3b9c03, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
 }
 
-#green:active,
-#green.activated {
+.color-green:active,
+.color-green.activated {
     box-shadow: 0 0 0 1px #83df0b inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 0 0 1px rgba(0, 0, 0, 0.4);
     background-color: #58d802;
     transform: translateY(10px);
 }
 
-#red {
+.color-red {
     height: 100px;
     width: 100px;
     border: none;
@@ -110,22 +110,22 @@ div {
     transition: 0.15s;
 }
 
-#red:hover,
-#red:focus {
+.color-red:hover,
+.color-red:focus {
     background-color: #ff451a;
     box-shadow: 0 0 0 1px #FF3000 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 10px 0 0 #e62b00, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
 }
 
-#red:active,
-#red.activated {
+.color-red:active,
+.color-red.activated {
     box-shadow: 0 0 0 1px #ff5c36 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 0 0 1px rgba(0, 0, 0, 0.4);
     background-color: #ff7300;
     transform: translateY(10px);
 }
 
-#yellow {
+.color-yellow {
     height: 100px;
     width: 100px;
     border: none;
@@ -135,22 +135,22 @@ div {
     transition: 0.15s;
 }
 
-#yellow:hover,
-#yellow:focus {
+.color-yellow:hover,
+.color-yellow:focus {
     background-color: rgb(251, 201, 0);
     box-shadow: 0 0 0 1px rgb(251, 201, 0) inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 10px 0 0 #d49a08, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
 }
 
-#yellow:active,
-#yellow.activated {
+.color-yellow:active,
+.color-yellow.activated {
     box-shadow: 0 0 0 1px #ce9e18 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 0 0 1px rgba(0, 0, 0, 0.4);
     background-color: #fcdf5e;
     transform: translateY(10px);
 }
 
-#blue {
+.color-blue {
     height: 100px;
     width: 100px;
     border: none;
@@ -160,15 +160,15 @@ div {
     transition: 0.15s;
 }
 
-#blue:hover,
-#blue:focus {
+.color-blue:hover,
+.color-blue:focus {
     background-color: rgb(69, 69, 255);
     box-shadow: 0 0 0 1px rgb(69, 69, 255) inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 10px 0 0 #1155ba, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
 }
 
-#blue:active,
-#blue.acivated {
+.color-blue:active,
+.color-blue.activated {
     box-shadow: 0 0 0 1px #0077ff inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 0 0 1px rgba(0, 0, 0, 0.4);
     background-color: #0077ff;
