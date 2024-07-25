@@ -7,9 +7,11 @@ const BLUE = "Blue";
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-const compChoice = [];
-let playerChoice = [];
-let score = 0;
+const gameState = {
+    compChoice: [],
+    playerChoice: [],
+    score: 0,
+};
 
 // - Light pattern
 
@@ -17,10 +19,10 @@ let score = 0;
 
 const startButton = document.getElementById("start-button");
 
-const greenButton = document.getElementById("simon-btn-top-left");
-const redButton = document.getElementById("simon-btn-top-right");
-const yellowButton = document.getElementById("simon-btn-btm-left");
-const blueButton = document.getElementById("simon-btn-btm-right");
+const greenButton = document.getElementById("top-left");
+const redButton = document.getElementById("top-right");
+const yellowButton = document.getElementById("btm-left");
+const blueButton = document.getElementById("btm-right");
 
 const buttons = [greenButton, redButton, yellowButton, blueButton];
 
@@ -28,59 +30,73 @@ const scoreCount = document.getElementById("score");
 
 /*-------------------------------  Render Functions --------------------------*/
 
-// const render = () => {
-//     addToCompChoice();
-//     handlePlayerChoice();
-// }
+const render = () => {
+    addToCompChoice();
+    handlePlayerClick();
+    yourScore();
+
+}
 
 /*-------------------------------- Functions --------------------------------*/
 
 
 // to commence the beginning of a round of Simon
 const startGame = () => {
-    addToCompChoice();
-    console.log(compChoice); //TODO delete aft checking
+    gameState.compChoice.push(GREEN, RED); //TODO temporary just to test if my function work
+    console.log(gameState.compChoice); //TODO delete aft checking
 };
 
 // add the next colour to the sequence for Computer
+//TODO ignore till i get the basic sequence to run first
 const addToCompChoice = () => {
     const colors = [GREEN, RED, YELLOW, BLUE];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    compChoice.push(randomColor);
+    gameState.compChoice.push(randomColor);
 };
 
 // to check if Player's Choice = Computer's Choice
 const checkChoice = () => {
-    for (let i = 0; i < playerChoice.length; i++) {
-    if (playerChoice[i] === compChoice[i]) {
-        return true;
+    if (gameState.playerChoice.length === gameState.compChoice.length) {
+        for (let i = 0; i < gameState.playerChoice.length; i++) {
+        if (gameState.playerChoice[i] !== gameState.compChoice[i]) {
+            return console.log("You Lost");  //TODO change aft testing
+        } else {
+            return console.log("Won");  //TODO change aft testing
+        }
+        }   
     } else {
-        return false;
+        console.log("You Lost");  //TODO change aft testing
     }
-}
 };
 
 // to add the Player's seleceted color into Player's sequence
-const handlePlayerChoice = (event) => {
+const handlePlayerClick = (event) => {
     if (event.target === greenButton) {
-        playerChoice.push(GREEN);
+        gameState.playerChoice.push(GREEN);
     } else if (event.target === redButton) {
-        playerChoice.push(RED);
+        gameState.playerChoice.push(RED);
     } else if (event.target === yellowButton) {
-        playerChoice.push(YELLOW);
+        gameState.playerChoice.push(YELLOW);
     } else if (event.target === blueButton) {
-        playerChoice.push(BLUE);
+        gameState.playerChoice.push(BLUE);
     }
-    console.log(playerChoice); //TODO delete aft checking
+    console.log(gameState.playerChoice); //TODO delete aft checking
+    checkChoice();
 };
 
+const test1 = () => {
+    if (gameState.playerChoice.length !== gameState.compChoice.length) {
+
+    }
+}
+checkChoice();
 
 
-
+// render();
 
 
 // let count = 0;
-// const handlePlayerChoice = (event) => {
+// const handlePlayerClick = (event) => {
 //     for (let i = 0; i < buttons.length; i++) {
 //         if (event.target === buttons[i]) {
 //             count++;
@@ -89,13 +105,11 @@ const handlePlayerChoice = (event) => {
 //     scoreCount.textContent = "Your Score: " + count;
 // };
 
-// render();
-
 /*----------------------------- Event Listeners -----------------------------*/
 
 startButton.addEventListener("click", startGame);
 
-greenButton.addEventListener("click", handlePlayerChoice);
-redButton.addEventListener("click", handlePlayerChoice);
-yellowButton.addEventListener("click", handlePlayerChoice);
-blueButton.addEventListener("click", handlePlayerChoice);
+greenButton.addEventListener("click", handlePlayerClick);
+redButton.addEventListener("click", handlePlayerClick);
+yellowButton.addEventListener("click", handlePlayerClick);
+blueButton.addEventListener("click", handlePlayerClick);

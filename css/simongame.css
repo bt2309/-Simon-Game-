@@ -39,7 +39,7 @@ div {
     flex-wrap: wrap;
 }
 
-#simon-btn-top-left {
+#top-left {
     color: white;
     height: 100px;
     width: 100px;
@@ -47,7 +47,7 @@ div {
     background-color: green;
 }
 
-#simon-btn-top-right {
+#top-right {
     color: white;
     height: 100px;
     width: 100px;
@@ -55,7 +55,7 @@ div {
     background-color: red;
 }
 
-#simon-btn-btm-left {
+#btm-left {
     color: rgb(0, 0, 0);
     height: 100px;
     width: 100px;
@@ -63,7 +63,7 @@ div {
     background-color: yellow;
 }
 
-#simon-btn-btm-right {
+#btm-right {
     color: white;
     height: 100px;
     width: 100px;
