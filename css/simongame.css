@@ -1,3 +1,7 @@
+.hidden {
+    display: none !important;
+}
+
 #game-name {
     font-family: "Playwrite AR", cursive;
     font-optical-sizing: auto;
@@ -30,45 +34,152 @@ div {
     align-items: center;
 }
 
-#simon-board {
-    width: 200px;
+.info {
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    color: royalblue;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reset-button {
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    border-color: lightcyan;
+    color: white;
+    background-color: royalblue;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.simon-board {
+    width: 300px;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
-#simon-btn-top-left {
-    color: white;
+.unclickable {
+    pointer-events: none;
+}
+
+.color-green {
     height: 100px;
     width: 100px;
     border: none;
-    background-color: green;
+    background-color: rgb(0, 169, 0);
+    box-shadow: 0 0 0 1px #3eba00 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 8px 0 0 #138e05, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
 }
 
-#simon-btn-top-right {
-    color: white;
+.color-green:hover,
+.color-green:focus {
+    background-color: #18c22f;
+    box-shadow: 0 0 0 1px #18c22f inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 10px 0 0 #3b9c03, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+}
+
+.color-green:active,
+.color-green.activated {
+    box-shadow: 0 0 0 1px #83df0b inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #58d802;
+    transform: translateY(10px);
+}
+
+.color-red {
     height: 100px;
     width: 100px;
     border: none;
-    background-color: red;
+    background-color: rgb(255, 43, 43);
+    box-shadow: 0 0 0 1px #f25022 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+     0 8px 0 0 #c93a12, 0 8px 0 1px rgba(0, 0, 0, 0.4),
+      0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
 }
 
-#simon-btn-btm-left {
-    color: rgb(0, 0, 0);
+.color-red:hover,
+.color-red:focus {
+    background-color: #ff451a;
+    box-shadow: 0 0 0 1px #FF3000 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 10px 0 0 #e62b00, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+}
+
+.color-red:active,
+.color-red.activated {
+    box-shadow: 0 0 0 1px #ff5c36 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #ff7300;
+    transform: translateY(10px);
+}
+
+.color-yellow {
     height: 100px;
     width: 100px;
     border: none;
-    background-color: yellow;
+    background-color: #ffb900;
+    box-shadow: 0 0 0 1px #ffb900 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 8px 0 0 #c28e07, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
 }
 
-#simon-btn-btm-right {
-    color: white;
+.color-yellow:hover,
+.color-yellow:focus {
+    background-color: rgb(251, 201, 0);
+    box-shadow: 0 0 0 1px rgb(251, 201, 0) inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 10px 0 0 #d49a08, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+}
+
+.color-yellow:active,
+.color-yellow.activated {
+    box-shadow: 0 0 0 1px #ce9e18 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #fcdf5e;
+    transform: translateY(10px);
+}
+
+.color-blue {
     height: 100px;
     width: 100px;
     border: none;
-    background-color: blue;
+    background-color: #193ffe;
+    box-shadow: 0 0 0 1px #1328e2 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 10px 0 0 #1328e2, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+    transition: 0.15s;
+}
+
+.color-blue:hover,
+.color-blue:focus {
+    background-color: rgb(69, 69, 255);
+    box-shadow: 0 0 0 1px rgb(69, 69, 255) inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 10px 0 0 #1155ba, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+}
+
+.color-blue:active,
+.color-blue.activated {
+    box-shadow: 0 0 0 1px #0077ff inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #0077ff;
+    transform: translateY(10px);
+}
+
+#message {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 #score {
