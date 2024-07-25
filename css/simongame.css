@@ -69,7 +69,7 @@ div {
     flex-wrap: wrap;
 }
 
-#top-left {
+#green {
     color: white;
     height: 100px;
     width: 100px;
@@ -77,7 +77,7 @@ div {
     background-color: green;
 }
 
-#top-right {
+#red {
     color: white;
     height: 100px;
     width: 100px;
@@ -85,7 +85,7 @@ div {
     background-color: red;
 }
 
-#btm-left {
+#yellow {
     color: rgb(0, 0, 0);
     height: 100px;
     width: 100px;
@@ -93,7 +93,7 @@ div {
     background-color: yellow;
 }
 
-#btm-right {
+#blue {
     color: white;
     height: 100px;
     width: 100px;

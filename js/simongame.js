@@ -76,12 +76,38 @@ const startGame = () => {
 const nextRound = () => {
     level += 1;
     const nextSequence = [...sequence];
+    nextSequence.push(nextStep());
 }
 
+//* to make computer choose a random color to add to sequence
 const nextStep = () => {
     const colors = ["green", "red", "yellow", "blue"];
     const random = colors[Math.floor(Math.random() * colors.length)];
     return random;
+}
+
+//* link the selected color to give off a sound
+//* and subsequently unselect the color
+const activateButton = (color) => {
+    const button = document.querySelector(`[id="${color}"]`);
+    const sound = document.querySelector(`[data-sound="${color}"]`);
+
+    button.classList.add("activated");
+    sound.play();
+
+    setTimeout(() => {
+        button.classList.remove("activated");
+    }, 300);
+}
+
+//* iterate over the next sequence
+//* allocate 600ms interval per value in sequence 
+const playRound = (nextSequence) => {
+    nextSequence.forEach((color, index) => {
+        setTimeout (() => {
+            activateButton(color);
+        }, (index + 1) * 600);
+    });
 }
 
 
