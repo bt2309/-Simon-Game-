@@ -60,7 +60,7 @@ div {
     align-items: center;
 }
 
-#simon-board {
+.simon-board {
     width: 300px;
     margin: auto;
     display: flex;
@@ -68,6 +68,10 @@ div {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.unclickable {
+    pointer-events: none;
 }
 
 #green {

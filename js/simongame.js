@@ -24,6 +24,8 @@ let level = 0;
 
 const startButton = document.getElementById("start-button");
 const info = document.querySelector(".info");
+const heading = document.getElementById("game-name");
+const simonBoard = document.querySelector(".simon-board");
 // const resetButton = document.getElementById("reset-button");
 
 // const greenButton = document.getElementById("top-left");
@@ -79,6 +81,11 @@ const nextRound = () => {
     const nextSequence = [...sequence]; // copy all values of previous sequence over to the next
     nextSequence.push(nextStep()); // push the comp chosen color into the next sequence array
     playRound(nextSequence); // iterate over the updated sequence with a new color added
+
+    sequence = [...nextSequence]; // since player's turn has to take place right after computer's
+    setTimeout (() => {           // turn, an artificial delay needs to be added in.
+        humanTurn(level);
+    }, level * 600 + 1000); // trial and error
 }
 
 //* to make computer choose a random color to add to sequence
@@ -113,6 +120,15 @@ const playRound = (nextSequence) => {
         }, (index + 1) * 600);
     });
 }
+
+//* indicate player's turn to repeat sequence
+const playerTurn = () => {
+    simonBoard.classList.remove("unclickable");
+    info.textContent = "Your Turn 👋";
+}
+
+
+
 
 
 
