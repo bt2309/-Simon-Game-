@@ -1,10 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
 
-const GREEN = "Green";
-const RED = "Red";
-const YELLOW = "Yellow";
-const BLUE = "Blue";
-
 /*---------------------------- Variables (state) ----------------------------*/
 
 let sequence = [];
