@@ -70,13 +70,15 @@ const startGame = () => {
     startButton.classList.add("hidden");
     info.classList.remove("hidden");
     info.textContent = "Wait for the computer 😊";
+    nextRound(); // start off the 1st round
 }
 
 //* to start the next sequence of color clicks
 const nextRound = () => {
     level += 1;
-    const nextSequence = [...sequence];
-    nextSequence.push(nextStep());
+    const nextSequence = [...sequence]; // copy all values of previous sequence over to the next
+    nextSequence.push(nextStep()); // push the comp chosen color into the next sequence array
+    playRound(nextSequence); // iterate over the updated sequence with a new color added
 }
 
 //* to make computer choose a random color to add to sequence
@@ -87,7 +89,8 @@ const nextStep = () => {
 }
 
 //* link the selected color to give off a sound
-//* and subsequently unselect the color
+//* and subsequently unselect the color after 300ms
+//* which also means there's 300ms between color activations
 const activateButton = (color) => {
     const button = document.querySelector(`[id="${color}"]`);
     const sound = document.querySelector(`[data-sound="${color}"]`);
@@ -101,7 +104,8 @@ const activateButton = (color) => {
 }
 
 //* iterate over the next sequence
-//* allocate 600ms interval per value in sequence 
+//* allocate 600ms interval per value in sequence, avoiding all the tiles
+//* activating all at once.
 const playRound = (nextSequence) => {
     nextSequence.forEach((color, index) => {
         setTimeout (() => {
@@ -109,6 +113,9 @@ const playRound = (nextSequence) => {
         }, (index + 1) * 600);
     });
 }
+
+
+
 
 
 // const startGame = () => {
