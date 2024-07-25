@@ -95,8 +95,17 @@ const handleClick = (color) => {
     const sound = document.querySelector(`[data-sound="${color}"]`); // link sound to click
     sound.play();
 
+    if (playerSequence[index] !== sequence[index]) { // if color chosen by player !== comp
+        resetGame("Ouch! Better luck next time, you messed up. 😅"); // reset + alert text
+        return;
+    }
+
     if (playerSequence.length === sequence.length) {
-        playerSequence = [];
+        if (playerSequence.length === 20) { // max level of 20
+            resetGame("🎊🤩WOW ! You defeated the game!!!🤩🎊"); // reset + congrat text
+            return
+        }
+        playerSequence = []; // reset playerSequence array
         info.textContent = "Success! Keep going! 💪"; // replace text to indicicate correct answer
         setTimeout (() => {
             nextRound();
@@ -104,6 +113,19 @@ const handleClick = (color) => {
         return;
     }
 }
+
+//* create reset function for when the player gets the wrong sequence, to restore game to original state
+const resetGame = (text) => {
+    alert(text); // make an alert text pop up
+    sequence = []; // reset sequence
+    playerSequence = []; // reset player's sequence
+    level = 0; // reset level back to 0
+    startButton.classList.remove("hidden"); // bring back the start button again
+    heading.textContent = "Simon Game"; // bring back the name of game
+    info.classList.add("hidden"); // hide text e.g. "Wait for..." & "Your Turn..." & "Success! ..."
+    simonBoard.classList.add("unclickable"); // make the buttons unclickable to prepare for new game
+}
+
 
 
 /*----------------------------- Event Listeners -----------------------------*/
