@@ -96,7 +96,7 @@ const handleClick = (color) => {
     }
 
     if (playerSequence.length === sequence.length) {
-        if (playerSequence.length === 20) { // max level of 20
+        if (playerSequence.length === 10) { // max level of 10
             resetGame("🎊🤩WOW ! You defeated the game!!!🤩🎊"); // reset + congrat text
             return
         }
