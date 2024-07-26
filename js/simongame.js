@@ -33,7 +33,7 @@ const nextRound = () => {
 
     simonBoard.classList.add("unclickable"); // add back "pointer-event: none" in css
     info.textContent = "Wait for the computer 😊";
-    heading.textContent = `Level ${level} of 3`; // indicate level reached
+    heading.textContent = `Level ${level} of 10`; // indicate level reached
 
     const nextSequence = [...sequence]; // copy all values of previous sequence over to the next
     nextSequence.push(nextStep()); // push the comp chosen color into the next sequence array
@@ -96,7 +96,7 @@ const handleClick = (color) => {
     }
 
     if (playerSequence.length === sequence.length) {
-        if (playerSequence.length === 3) { // max level of 3
+        if (playerSequence.length === 10) { // max level of 10
             resetGame("🎊🤩WOW ! You defeated the game!!!🤩🎊"); // reset + congrat text
             return
         }
